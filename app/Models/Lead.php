@@ -10,6 +10,7 @@ class Lead extends Model
         'name',
         'email',
         'subject',
+        'phone',
         'user_id',
         'pipeline_id',
         'stage_id',

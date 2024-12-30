@@ -1,8 +1,18 @@
 <div class="modal-body task-id" id="{{$task->id}}">
     <div class="card">
         <div class="card-body">
-            <h5> {{__('Task Detail')}}</h5>
-            <div class="row  mt-4">
+         
+            <h5>  {{__('Task Detail')}}  <span class="badge-xs badge bg-{{\App\Models\ProjectTask::$priority_color[$task->priority]}} p-2 px-3 rounded">{{ __(\App\Models\ProjectTask::$priority[$task->priority]) }}</span>
+            @can('edit project task')
+            <a href="#!" data-size="lg" data-url="{{ route('projects.tasks.edit',[$task->project_id,$task->id]) }}" data-ajax-popup="true"  data-bs-original-title="{{__('Edit ').$task->name}}">
+               
+                <span class="btn btn-primary btn-icon btn-sm " > <i class="ti ti-pencil"></i> {{__('Edit')}}</span>
+            </a>
+            @endcan
+            </h5>
+            
+
+            <div class="row  mt-3">
                 <div class="col-md-4 col-sm-6">
                     <div class="d-flex align-items-start">
                         <div class="ms-2">
@@ -37,8 +47,13 @@
                 @endif
             </div>
             <div class="row mt-4">
-                <div class="col">
-                    <p class="text-sm text-muted mb-2">{{ (!empty($task->description)) ? $task->description : '-' }}</p>
+                <div class="col-md-12">
+                    <h6>Mô tả</h6>
+                    <p class="text-sm text-muted mb-2">{!! (!empty($task->description)) ? $task->description : '-' !!}</p>
+                </div>
+                <div class="col-md-12">
+                    <h6>Phản hồi</h6>                    
+                    <p class="text-sm text-muted mb-2">{!! (!empty($task->responsive)) ? $task->responsive : '-' !!}</p>
                 </div>
             </div>
 

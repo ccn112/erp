@@ -15,6 +15,7 @@ class ProjectTask extends Model
     protected $fillable = [
         'name',
         'description',
+        'response',
         'estimated_hrs',
         'start_date',
         'end_date',

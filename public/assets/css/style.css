@@ -58,7 +58,7 @@ File: style.css
     --bs-black-rgb: 0, 0, 0;
     --bs-body-color-rgb: 41, 50, 64;
     --bs-body-bg-rgb: 248, 249, 253;
-    --bs-font-sans-serif: "Open Sans", sans-serif;
+    --bs-font-sans-serif: Arial, sans-serif;
     --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
     --bs-body-font-family: var(--bs-font-sans-serif);
@@ -77,8 +77,8 @@ File: style.css
     --bs-border-radius-xl: 1rem;
     --bs-border-radius-2xl: 2rem;
     --bs-border-radius-pill: 50rem;
-    --bs-link-color: #51459d;
-    --bs-link-hover-color: #51459d;
+    --bs-link-color: #457c9d;
+    --bs-link-hover-color: #457c9d;
     --bs-code-color: #e83e8c;
     --bs-highlight-bg: #fcf8e3;
 }
@@ -16912,7 +16912,7 @@ body.theme-6 .dash-sidebar.light-sidebar .dash-navbar > .dash-item.active > .das
 
 body.theme-6 .dash-sidebar.light-sidebar .dash-item .dash-submenu .dash-item::before,
   body.theme-6 .dash-sidebar .dash-item .dash-submenu .dash-item::before {
-    border-right-color: #008ECC;
+    border-color: #8f8f8f;
 }
 
 body.theme-6 .dash-sidebar.light-sidebar .dash-item .dash-submenu .dash-item.active > .dash-link, body.theme-6 .dash-sidebar.light-sidebar .dash-item .dash-submenu .dash-item:active > .dash-link, body.theme-6 .dash-sidebar.light-sidebar .dash-item .dash-submenu .dash-item:focus > .dash-link, body.theme-6 .dash-sidebar.light-sidebar .dash-item .dash-submenu .dash-item:hover > .dash-link,

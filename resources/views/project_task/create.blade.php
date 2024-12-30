@@ -14,13 +14,13 @@
     @endif
     {{-- end for ai module--}}
     <div class="row">
-        <div class="col-6">
+        <div class="col-md-8">
             <div class="form-group">
                 {{ Form::label('name', __('Task name'),['class' => 'form-label']) }}<x-required></x-required>
                 {{ Form::text('name', null, ['class' => 'form-control','required'=>'required', 'placeholder'=>__('Enter Task Name')]) }}
             </div>
         </div>
-        <div class="col-6">
+        <div class="col-md-4">
             <div class="form-group">
                 {{ Form::label('milestone_id', __('Milestone'),['class' => 'form-label']) }}
                 <select class="form-control select" name="milestone_id" id="milestone_id">
@@ -31,24 +31,17 @@
                 </select>
             </div>
         </div>
-        <div class="col-12">
-            <div class="form-group">
-                {{ Form::label('description', __('Description'),['class' => 'form-label']) }}
-                <small class="form-text text-muted mb-2 mt-0">{{__('This textarea will autosize while you type')}}</small>
-                {{ Form::textarea('description', null, ['class' => 'form-control','rows'=>'1','data-toggle' => 'autosize', 'placeholder'=>__('Enter Description')]) }}
-            </div>
-        </div>
-        <div class="col-6">
+         <div class="col-md-3">
             <div class="form-group">
                 {{ Form::label('estimated_hrs', __('Estimated Hours'),['class' => 'form-label']) }}<x-required></x-required>
-                <small class="form-text text-muted mb-2 mt-0">{{__('allocated total ').$hrs['allocated'].__(' hrs in other tasks')}}</small>
-                {{ Form::number('estimated_hrs', null, ['class' => 'form-control','required' => 'required','min'=>'0','maxlength' => '8', 'placeholder'=>__('Enter Estimated Hours')]) }}
+               
+                {{ Form::number('estimated_hrs', null, ['class' => 'form-control','required' => 'required','min'=>'0','maxlength' => '8']) }}
             </div>
         </div>
-        <div class="col-6">
+        <div  class="col-md-3">
             <div class="form-group">
                 {{ Form::label('priority', __('Priority'),['class' => 'form-label']) }}<x-required></x-required>
-                <small class="form-text text-muted mb-2 mt-0">{{__('Set Priority of your task')}}</small>
+                
                 <select class="form-control select" name="priority" id="priority" required>
                     @foreach(\App\Models\ProjectTask::$priority as $key => $val)
                         <option value="{{ $key }}">{{ __($val) }}</option>
@@ -56,18 +49,34 @@
                 </select>
             </div>
         </div>
-        <div class="col-6">
+        <div class="col-md-3">
             <div class="form-group">
                 {{ Form::label('start_date', __('Start Date'),['class' => 'form-label']) }}
                 {{ Form::date('start_date', null, ['class' => 'form-control']) }}
             </div>
         </div>
-        <div class="col-6">
+        <div class="col-md-3">
             <div class="form-group">
                 {{ Form::label('end_date', __('End Date'),['class' => 'form-label']) }}
                 {{ Form::date('end_date', null, ['class' => 'form-control']) }}
             </div>
         </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                {{ Form::label('description', __('Description'),['class' => 'form-label']) }}
+                
+                {{ Form::textarea('description', null, ['class' => 'form-control summernote-simple','rows'=>'3','data-toggle' => 'autosize', 'placeholder'=>__('Enter Description')]) }}
+            </div>
+        </div> 
+        <div class="col-md-12">
+            <div class="form-group">
+                {{ Form::label('response', 'Phản hồi',['class' => 'form-label']) }}
+                
+                {{ Form::textarea('response', null, ['class' => 'form-control summernote-simple','rows'=>'3','data-toggle' => 'autosize', 'placeholder'=>'Phản hồi']) }}
+            </div>
+        </div>
+        
+       
     </div>
     <div class="form-group">
         <label class="form-label">{{__('Task members')}}</label>

@@ -1861,8 +1861,72 @@ class LeadController extends Controller
 
                 }
                 $_SESSION['file_data'] = $temp_data;
-            } else {
-                $error = 'Only <b>.csv</b> file allowed';
+            } elseif ($extension == 'xlsx' ||$extension == 'xls')  {
+                 //luồng import luôn
+                Excel::import(new LeadImport, $request->file->getRealPath());
+                // hết luồng importluoon
+                
+                // xử lý lại luồng này.
+                // $rowarr = Excel::toArray(new LeadImport,$request->file->getRealPath());   
+                // $temp_data = [];
+                // $html .= '<table class="table table-bordered"><tr>';
+                // for ($count = 0; $count < 4; $count++) {
+                //     $html .= '
+                //                 <th>
+                //                     <select name="set_column_data" class="form-control set_column_data" data-column_number="' . $count . '">
+                //                         <option value="">Set Count Data</option>
+                //                         <option value="subject">Subject</option>
+                //                         <option value="name">Name</option>
+                //                         <option value="email">Email</option>
+                //                         <option value="phone">Phone No</option>
+                //                     </select>
+                //                 </th>
+                //                 ';
+                // }
+                // $html .= '
+                //                 <th>
+                //                         <select name="set_column_data" class="form-control set_column_data user-name" data-column_number="' . $count + 1 . '">
+                //                             <option value="user">User</option>
+                //                         </select>
+                //                 </th>
+                //                 ';
+                // $html .= '</tr>';
+                // foreach ($rowarr as $key => $row) {                                        
+                    
+                //     $limit = 0;
+                                       
+                //     // echo $row->column_name;
+                //     $html .= '<tr>';
+                //     // Các cột trong file exel: Name, email, phone, subject                        
+                //     $html .= '<td>' . $row[0] . '</td>'.
+                //              '<td>' . $row[1] . '</td>'.
+                //              '<td>' . $row[2] . '</td>'.
+                //              '<td>' . $row[3] . '</td>';                        
+                //     $html .= '<td>
+                //                     <select name="user" class="form-control user-name-value">;';
+                //         if (\Auth::user()->type == "company") {
+                //             $users = User::where('created_by', '=', \Auth::user()->creatorId())->where('type', '!=', 'client')->get()->pluck('name', 'id');
+                //         } else {
+                //             $users = User::where('id', '=', \Auth::user()->id)->where('type', '!=', 'client')->get()->pluck('name', 'id');
+                //         }
+                //         foreach ($users as $key => $user) {
+                //             $html .= ' <option value="' . $key . '">' . $user . '</option>';
+                //         }
+                //         $html .= '  </select>
+                //                 </td>';
+
+                //     $html .= '</tr>';
+                //     $temp_data[] = $row;
+                // }
+                    
+                // $_SESSION['file_data'] = $temp_data;
+                //hết luồng cũ.
+
+               
+
+            }else
+            {
+                $error = 'Only <b>.csv, xls</b> file allowed';
             }
         } else {
 

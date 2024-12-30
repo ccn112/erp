@@ -4,11 +4,13 @@
 @endsection
 
 @push('css-page')
-    <link rel="stylesheet" href="{{asset('css/summernote/summernote-bs4.css')}}">
+    <!-- <link rel="stylesheet" href="{{asset('css/summernote/summernote-bs4.css')}}"> -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/css/plugins/dragula.min.css') }}" id="main-style-link">
 @endpush
 @push('script-page')
-    <script src="{{asset('css/summernote/summernote-bs4.js')}}"></script>
+    <!-- <script src="{{asset('css/summernote/summernote-bs4.js')}}"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.js"></script>
     <script src="{{ asset('assets/js/plugins/dragula.min.js') }}"></script>
     <script>
         !function (a) {
@@ -464,7 +466,7 @@
                                             </div>
                                             @if(isset($taskDetail->description)&&$taskDetail->description)
                                             <div>
-                                                {{$taskDetail->description}}
+                                                {!! $taskDetail->description !!}
                                             </div>
                                             @endif
                                         </div>

@@ -621,7 +621,7 @@ a.b-brand {
 
 
 .horizontal-scroll-cards p {
-    width: 120px;
+    /*width: 120px;*/
 }
 .horizontal-scroll-cards  img {
     border: 2px solid #fff;
@@ -658,7 +658,7 @@ a.b-brand {
 
 .big-logo {
     width: 150px;
-    height: 60px;
+    /*height: 60px;*/
 }
 .card-2{
     height: 100%;
@@ -768,11 +768,11 @@ a.b-brand {
     height: 180px;
 }
 .logo_card{
-    min-height: 280px;
+    min-height: 20px;
 }
 .img_preview{
     width: 150px;
-    height: 130px;
+    /*height: 130px;*/
 }
 .setting_logo{
     top: -35px;
