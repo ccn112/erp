@@ -472,7 +472,7 @@
                                         </div>
 
                                         <div class="card-body">
-                                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                            <div class="d-flex align-items-center justify-content-between mb-1">
                                                 <ul class="list-inline mb-0">
 
                                                     <li class="list-inline-item d-inline-flex align-items-center" data-bs-toggle="tooltip" title="{{__('Files')}}">
@@ -481,12 +481,7 @@
                                                     <li class="list-inline-item d-inline-flex align-items-center" data-bs-toggle="tooltip" title="{{__('Task Progress')}}">
                                                         @if(str_replace('%','',$taskDetail->taskProgress($taskDetail)['percentage']) > 0)<span class="text-md">{{ $taskDetail->taskProgress($taskDetail)['percentage'] }}</span>@endif
                                                     </li>
-                                                </ul>
-                                               
-                                            </div>
-                                            <div class="d-flex align-items-center justify-content-between">
-                                                <ul class="list-inline mb-0">
-
+                                          
                                                     <li class="list-inline-item d-inline-flex align-items-center" data-bs-toggle="tooltip" title="{{__('Comments')}}">
                                                         <i class="f-16 text-primary ti ti-message"></i> {{ count($taskDetail->comments) }}
                                                     </li>
