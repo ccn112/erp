@@ -5,7 +5,8 @@
 
   var pusher = new Pusher("{{ config('chatify.pusher.key') }}", {
     encrypted: true,
-    cluster: "{{ config('chatify.pusher.options.cluster') }}",
+    cluster: "ap1",
+    // cluster: "{{ config('chatify.pusher.options.cluster') }}",
     authEndpoint: '{{route("pusher.auth")}}',
     auth: {
         headers: {

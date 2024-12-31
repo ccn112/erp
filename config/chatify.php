@@ -7,7 +7,7 @@ return [
     | Messenger display name
     |-------------------------------------
     */
-    'name' => env('CHATIFY_NAME', 'Messenger'),
+    'name' => env('CHATIFY_NAME', 'FinERP - Messenger'),
 
 
     /*
