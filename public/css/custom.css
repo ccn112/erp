@@ -2291,4 +2291,7 @@ body.theme-10 .information-tab {
 .information-tab .nav-item .nav-link {
     background-color: #FFFFFF;
 }
+.task-kanban-ccn img{
+    max-width: 100%;
+}
 

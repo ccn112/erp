@@ -465,7 +465,7 @@
                                                 </div>
                                             </div>
                                             @if(isset($taskDetail->description)&&$taskDetail->description)
-                                            <div>
+                                            <div class='task-kanban-ccn'>
                                                 {!! $taskDetail->description !!}
                                             </div>
                                             @endif
