@@ -139,6 +139,7 @@
 {{-- -------------------- Shared photos Item -------------------- --}}
 @if($get == 'sharedPhoto')
     <div class="shared-photo chat-image" style="background-image: url('{{ $image }}')"></div>
+    
 @endif
 
 

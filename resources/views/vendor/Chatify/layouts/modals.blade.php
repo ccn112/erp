@@ -17,6 +17,7 @@
           </div>
       </div>
   </div>
+  
   {{-- ---------------------- Alert Modal ---------------------- --}}
   <div class="app-modal" data-name="alert">
       <div class="app-modal-container">

@@ -138,7 +138,8 @@
                             <div class="internet-connection">
                                 <span class="ic-connected">{{__('Connected')}}</span>
                                 <span class="ic-connecting">{{__('Connecting...')}}</span>
-                                <span class="ic-noInternet">{{__('Please add pusher settings for using messenger.')}}</span>
+                                <span class="ic-noInternet">{{__('Please add pusher settings for using messenger.')}}
+                                </span>
                             </div>
                             {{-- Messaging area --}}
                             <div class="m-body app-scroll">

@@ -19,4 +19,5 @@
 <script>
   // Messenger global variable - 0 by default
   messenger = "{{ @$id }}";
+  
 </script>

@@ -24,4 +24,5 @@
 <div class="messenger-infoView-shared">
     <p class="messenger-title">{{__('shared photos')}}</p>
     <div class="shared-photos-list"></div>
+    
 </div>

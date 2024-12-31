@@ -23,6 +23,8 @@
     @endif
 @endif
 
+
+
 {{-- -------------------- Sender card (owner) -------------------- --}}
 @if($viewType == 'sender')
     <div class="message-card mc-sender" data-id="{{ $id }}">
