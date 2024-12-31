@@ -1,9 +1,10 @@
-<script src="https://js.pusher.com/7.0.3/pusher.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pusher/8.3.0/pusher.min.js"></script>
 <script >
   // Enable pusher logging - don't include this in production
   Pusher.logToConsole = true;
 
-  var pusher = new Pusher("{{ config('chatify.pusher.key') }}", {
+  // var pusher = new Pusher("{{ config('chatify.pusher.key') }}", {
+  var pusher = new Pusher("e43520e9ce75d3fcdb0f", {
     encrypted: true,
     cluster: "ap1",
     // cluster: "{{ config('chatify.pusher.options.cluster') }}",
