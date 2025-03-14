@@ -114,10 +114,10 @@ class AiTemplateController extends Controller
             $modelName = Utility::getValByName('chat_gpt_model');
 
             $complete = $open_ai->completion([
-                'model' => $modelName ? $modelName : '',
+                'model' => $modelName ? $modelName : 'gpt-4o',
                 'prompt' => $prompt.' '.$lang_text,
                 'temperature' => $ai_creativity,
-                'max_tokens' => $ai_tokens,
+                'max_tokens' => $ai_tokens, 
                 'n' => $max_results
             ]);
 
