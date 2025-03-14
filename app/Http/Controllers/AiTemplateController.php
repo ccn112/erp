@@ -112,29 +112,34 @@ class AiTemplateController extends Controller
             $max_results = (int)$request->num_of_result;
             $ai_creativity = (float)$request->ai_creativity;
             $modelName = Utility::getValByName('chat_gpt_model');
-
+            $mess =  (object)[]; 
+            $mess->role = "user";
+            $mess->content = $prompt.' '.$lang_text;
+            $messarr[] = $mess;
             $complete = $open_ai->completion([
                 'model' => $modelName ? $modelName : 'gpt-4o',
-                'prompt' => $prompt.' '.$lang_text,
+                // 'prompt' => $prompt.' '.$lang_text,
+                'messages' =>  $messarr,
                 'temperature' => $ai_creativity,
                 'max_tokens' => $ai_tokens, 
                 'n' => $max_results
             ]);
 
             $response = json_decode($complete , true);
+            // dump( $response );
             if (isset($response['choices']))
             {
                 if (count($response['choices']) > 1)
                 {
                     foreach ($response['choices'] as $value)
                     {
-                        $text .= $counter . '. ' . ltrim($value['text']) . "\r\n\r\n\r\n";
+                        $text .= $counter . '. ' . ltrim($value['message']['content']) . "\r\n";
                         $counter++;
                     }
                 }
                 else
                 {
-                    $text = $response['choices'][0]['text'];
+                    $text .= $response['choices'][0]['message']['content']; // for gpt4.0
 
                 }
 
